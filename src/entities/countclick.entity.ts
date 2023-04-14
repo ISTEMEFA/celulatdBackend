@@ -1,5 +1,5 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Usr } from "./user.entity";
+import { User } from "./user.entity";
 
 
 @Entity()
@@ -12,8 +12,8 @@ export class Clickcount {
   @Column('int')
   number_click: number;  
   
-  @ManyToOne(() => Usr, user => user.id)
-  user: Usr;
+  @ManyToOne(() => User, user => user.id)
+  user: User;
 
 
 }

@@ -6,7 +6,7 @@ import {
   OneToMany
 } from 'typeorm';
 import { Favorite } from './favorite.entity';
-import { Usr } from './user.entity';
+import { User } from './user.entity';
 import { View } from './view.entity';
 
 
@@ -35,8 +35,8 @@ export class Video {
   @Column({ type: 'timestamptz', nullable: true })
   date_publication: Date;
 
-  @ManyToOne(() => Usr, user => user.video)
-  user: Usr;
+  @ManyToOne(() => User, user => user.video)
+  user: User;
 
   @OneToMany(() => View, (view) => view.video)
   view: View[];

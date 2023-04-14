@@ -1,6 +1,6 @@
 
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne} from 'typeorm';
-import { Usr } from './user.entity';
+import { User } from './user.entity';
 import { Video } from './video.entity';
 
 

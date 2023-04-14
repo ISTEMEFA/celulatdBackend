@@ -1,5 +1,5 @@
 import {  Column, Entity,ManyToOne,PrimaryGeneratedColumn } from "typeorm";
-import { Usr } from "./user.entity";
+
 import { Video } from "./video.entity";
 
 @Entity()

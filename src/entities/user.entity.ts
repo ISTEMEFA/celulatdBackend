@@ -14,7 +14,7 @@ import { View } from './view.entity';
 
   
   @Entity()
-  export class Usr {
+  export class User {
     [x: string]: any;
 
 

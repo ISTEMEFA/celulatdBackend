@@ -8,22 +8,21 @@ import { UserModule } from './user/user.module';
 import { VideoModule } from './video/video.module';
 import { ViewModule } from './view/view.module';
 import { TrashModule } from './trash/trash.module';
+import { ConfigModule } from '@nestjs/config';
 
 
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'jona',
-      password: '1234',
-      database: 'ctd',
-      entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: true,
-      retryDelay: 3000,
-      retryAttempts: 10,
+      host: process.env.DB_HOST,
+      port: +process.env.DB_PORT,
+      database: process.env.DB_NAME,
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,      
+      autoLoadEntities: true,
     }),
     AdminModule,
     VideoModule,
